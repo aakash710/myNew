@@ -9,11 +9,16 @@ import { Recipe } from '../recipe';
   styles: []
 })
 export class RecipeListComponent {
-	recipes: Recipe[] = [];
+	recipes: Recipe[] = [
+      new Recipe('Chicken Biryani', 'Very Tasty', 'http://www.indianfoodforever.com/images/chicken-biryani.jpg'),
+      new Recipe('Chicken Curry', 'Yummy', 'http://www.indianfoodforever.com/images/chicken-curry.jpg'),
+      new Recipe('Chicken Tikka Masala', 'Delicious', 'http://www.indianfoodforever.com/images/chicken-tikka-masla.jpg'),
+
+  ];
 
    @Output() recipeSelected = new EventEmitter<Recipe>();
 
-	recipe = new Recipe('Dummy', 'Dummy', 'http://thumbs1.ebaystatic.com/d/l225/m/mmO4j9mo_hxxVRI9oarv-Hw.jpg');
+	
 
     onSelected(recipe: Recipe) {
     this.recipeSelected.emit(recipe);
