@@ -13,7 +13,7 @@ export class RecipeListComponent {
    private recipes: Recipe[] = [
         ];
 
-    @Output() recipeSelected = new EventEmitter<Recipe>();
+   
 
 constructor(private recipeService: RecipeService) { }
 
@@ -21,8 +21,6 @@ ngOnInit(){
     this.recipes = this.recipeService.getRecipes();
 }
 
-    onSelected(recipe: Recipe) {
-        this.recipeSelected.emit(recipe);
-    }
+   
 
 }
